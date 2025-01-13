@@ -59,9 +59,8 @@
 		regulator-name = "usb_vbus";
 		regulator-min-microvolt = <5000000>;
 		regulator-max-microvolt = <5000000>;
-		regulator-always-on;
-		gpios = <&gpio 19 GPIO_ACTIVE_HIGH>;
 		enable-active-high;
+		gpios = <&gpio 19 GPIO_ACTIVE_HIGH>;
 	};
 };
 
@@ -209,6 +208,7 @@
 
 &usb_phy {
 	status = "okay";
+	phy-supply = <&usb_vbus>;
 };
 
 &pcie {
